@@ -19,7 +19,7 @@ node {
   }
 
   catch (caughtError) {
-    err = caughtError
+    err = caughtError 
     currentBuild.result = "FAILURE"
   }
 
