@@ -17,4 +17,16 @@ node {
     stage 'Build'
       sh "/usr/local/packer build rabbit.json"
   }
+
+  catch (caughtError) {
+    err = caughtError
+    currentBuild.result = "FAILURE"
+  }
+
+  finally {
+    /* Must re-throw exception to propagate error */
+    if (err) {
+      throw err
+    }
+  }
 }
