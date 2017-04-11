@@ -1,0 +1,26 @@
+{
+  "builders": [{
+    "type": "docker",
+    "image": "centos", 
+    "commit": true,
+    "changes": [
+      "EXPOSE 5672 15672",
+      "CMD /sbin/rabbitmq-server start"
+    ]
+  }],
+
+  "provisioners": [{
+    "type": "shell",
+    "script": "install-rabbit.sh"
+  }],
+
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "rabbit-image",
+        "tag": "3.6.9"
+      }
+    ]
+  ]
+}
