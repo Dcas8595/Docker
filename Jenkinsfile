@@ -10,7 +10,7 @@ node {
       checkout scm
 
     stage 'Validate'
-      def packer_file = 'rabbit.json' 
+      def packer_file = 'rabbit.json'
       print "Running packer validate on : ${packer_file}"
       sh "/usr/local/packer validate ${packer_file}"
 
