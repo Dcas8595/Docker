@@ -1,0 +1,26 @@
+{
+  "builders": [{
+    "type": "docker",
+    "image": "centos", 
+    "commit": true,
+    "changes": [
+      "EXPOSE 8081 80 443 5000 1098 7777 5671 5672",
+      "ENTRYPOINT source ~/.bashrc && /opt/mule-standalone-3.8.1/bin/mule && /bin/bash"
+    ]
+  }],
+
+  "provisioners": [{
+    "type": "shell",
+    "script": "install-mule.sh"
+  }],
+
+  "post-processors": [
+    [
+      {
+        "type": "docker-tag",
+        "repository": "mule-image",
+        "tag": "3.8.1"
+      }
+    ]
+  ]
+}
