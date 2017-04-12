@@ -12,7 +12,7 @@
 
   "provisioners": [{
     "type": "shell",
-    "script": "install-rabbit.sh" 
+    "script": "install-rabbit.sh"
   }],
 
   "post-processors": [
