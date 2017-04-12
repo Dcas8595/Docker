@@ -15,6 +15,7 @@ node {
       sh "/usr/local/packer validate ${packer_file}"
 
     stage 'Build'
+      sh "whoami"
       sh "sudo /usr/local/packer build rabbit.json"  
   }
 
