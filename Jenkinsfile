@@ -16,7 +16,7 @@ node {
 
     stage 'Build'
       sh "whoami"
-      sh "sudo /usr/local/packer build rabbit.json"  
+      sh "sudo /usr/local/packer build mule.json"  
   }
 
   catch (caughtError) {
