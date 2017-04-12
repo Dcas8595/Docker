@@ -3,6 +3,7 @@
     "type": "docker",
     "image": "centos", 
     "commit": true,
+    "pull": false,
     "changes": [
       "EXPOSE 5672 15672",
       "CMD /sbin/rabbitmq-server start"
