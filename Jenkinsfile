@@ -15,7 +15,7 @@ node {
       sh "/usr/local/packer validate ${packer_file}"
 
     stage 'Build'
-      sh "/usr/local/packer build rabbit.json"
+      sh "/usr/local/packer build rabbit.json" 
   }
 
   catch (caughtError) {
