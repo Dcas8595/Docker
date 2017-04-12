@@ -12,10 +12,10 @@ node {
     stage 'Validate'
       def packer_file = 'rabbit.json' 
       print "Running packer validate on : ${packer_file}"
-      sh "/usr/local/packer validate ${packer_file}"
+      sh "sudo /usr/local/packer validate ${packer_file}"
 
     stage 'Build'
-      sh "/usr/local/packer build rabbit.json"
+      sh "sudo /usr/local/packer build rabbit.json"
   }
 
   catch (caughtError) {
